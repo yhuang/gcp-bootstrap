@@ -1,5 +1,5 @@
 locals {
-  tfc_project_id = data.tfc_project.main.id
+  tfc_project_id = data.tfe_project.main.id
 
   tfc_variable_set_id = {
     "host-vpc-project" = tfe_variable_set.host_vpc_project.id
