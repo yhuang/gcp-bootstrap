@@ -41,8 +41,8 @@ locals {
 
   tfc_gcp_workload_identity_principal_set = "principalSet://iam.googleapis.com/${local.tfc_gcp_workload_identity_pool_name}/*"
 
-  tfc_gcp_workspace_subject_value = <<EOF
-assertion.sub.startsWith("organization:${var.tfc_organization_name}:project:${var.tfc_project_name}:workspace") ||
+  tfc_gcp_project_subject_value = <<EOF
+assertion.sub.startsWith("organization:${var.tfc_organization_name}:project:${var.tfc_project_name}")
 EOF
 
 
