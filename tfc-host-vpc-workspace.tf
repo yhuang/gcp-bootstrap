@@ -1,11 +1,11 @@
 resource "tfe_workspace" "host_vpc_project" {
   name       = "host-vpc-project"
-  project_id = var.tfc_project_id
+  project_id = local.tfc_project_id
 }
 
 resource "tfe_variable_set" "host_vpc_project" {
   name              = "host-vpc-project"
-  parent_project_id = var.tfc_project_id
+  parent_project_id = local.tfc_project_id
 }
 
 # The following variables must be set to enable a Terraform workspace to use the
