@@ -1,10 +1,12 @@
 resource "tfe_workspace" "service_project" {
-  name       = "service-project"
-  project_id = local.tfc_project_id
+  name         = "service-project"
+  organization = var.tfc_organization_name
+  project_id   = local.tfc_project_id
 }
 
 resource "tfe_variable_set" "service_project" {
   name              = "service-project"
+  organization      = var.tfc_organization_name
   parent_project_id = local.tfc_project_id
 }
 

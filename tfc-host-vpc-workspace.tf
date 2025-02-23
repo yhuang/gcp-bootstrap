@@ -1,10 +1,12 @@
 resource "tfe_workspace" "host_vpc_project" {
-  name       = "host-vpc-project"
-  project_id = local.tfc_project_id
+  name         = "host-vpc-project"
+  organization = var.tfc_organization_name
+  project_id   = local.tfc_project_id
 }
 
 resource "tfe_variable_set" "host_vpc_project" {
   name              = "host-vpc-project"
+  organization      = var.tfc_organization_name
   parent_project_id = local.tfc_project_id
 }
 
