@@ -10,8 +10,8 @@ locals {
   }
 
   tfc_variable_set_id = {
-    "host-vpc-credentials" = data.tfe_variable_set.host_vpc_credentials.id
-    "service-credentials" = data.tfe_variable_set.service_credentials.id
+    "host-vpc-project-credentials" = data.tfe_variable_set.host_vpc_project_credentials.id
+    "service-project-credentials" = data.tfe_variable_set.service_project_credentials.id
   }
 
   tfc_gcp_service_account = {
