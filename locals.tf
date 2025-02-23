@@ -1,5 +1,5 @@
 locals {
-  tfe_variable_set = {
+  tfe_variable_set_id = {
     "host-vpc-project" = tfe_variable_set.host_vpc_project.id
     "service-project"  = tfe_variable_set.service_project.id
   }
