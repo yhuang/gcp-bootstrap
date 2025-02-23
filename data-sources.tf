@@ -1,3 +1,4 @@
 data "tfe_project" "main" {
-  name = var.tfc_project_name
+  organization = var.tfc_organization_name
+  name         = var.tfc_project_name
 }
