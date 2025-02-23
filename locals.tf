@@ -1,9 +1,9 @@
 locals {
   tfc_project_id = data.tfe_project.main.id
 
-  tfc_variable_set_id = {
-    "host-vpc-project" = tfe_variable_set.host_vpc_project.id
-    "service-project"  = tfe_variable_set.service_project.id
+  tfc_workspace_id = {
+    "host-vpc-project" = tfe_workspace.host_vpc_project.id
+    "service-project"  = tfe_workspace.service_project.id
   }
 
   tfc_gcp_service_account = {
