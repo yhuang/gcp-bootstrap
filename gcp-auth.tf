@@ -36,7 +36,7 @@ resource "google_iam_workload_identity_pool_provider" "tfc_gcp" {
 
     allowed_audiences = [local.tfc_gcp_audience]
   }
-  attribute_condition = local.tfc_gcp_workspace_subject_value
+  attribute_condition = local.tfc_gcp_project_subject_value
 }
 
 # Creates service accounts that will be used for authenticating to GCP.
