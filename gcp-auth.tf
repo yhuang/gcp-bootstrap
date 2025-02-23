@@ -1,3 +1,10 @@
+# Data source used to grab the TLS certificate for Terraform Cloud.
+#
+# https://registry.terraform.io/providers/hashicorp/tls/latest/docs/data-sources/certificate
+data "tls_certificate" "tfc_certificate" {
+  url = local.tfc_certificate_url_string
+}
+
 # Data source used to get the project number programmatically. If project_id is not provided, 
 # the provider project becomes the subject.
 #
