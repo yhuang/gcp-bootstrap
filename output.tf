@@ -1,7 +1,3 @@
-output "tfc_project_id" {
-  value = local.tfc_project_id
-}
-
 output "tfc_gcp_audience" {
   value = local.tfc_gcp_audience
 }

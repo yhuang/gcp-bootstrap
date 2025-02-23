@@ -21,3 +21,7 @@ variable "tfc_hostname" {
 variable "tfc_organization_name" {
   type = string
 }
+
+variable "tfc_project_id" {
+  type = string
+}

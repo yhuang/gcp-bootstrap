@@ -1,14 +1,4 @@
 locals {
-  tfc_project_id = {
-    "host-vpc" = data.tfe_project.host_vpc_project.id
-    "service"  = data.tfe_project.service_project.id
-  }
-
-  tfc_project_name = {
-    "host-vpc" = data.tfe_project.host_vpc_project.name
-    "service"  = data.tfe_project.service_project.name
-  }
-
   tfc_variable_set_id = {
     "host-vpc-project-credentials" = data.tfe_variable_set.host_vpc_project_credentials.id
     "service-project-credentials" = data.tfe_variable_set.service_project_credentials.id
@@ -113,4 +103,9 @@ EOF
 
   gcp_folder_id                  = var.gcp_folder_id == null ? "folders/" : "folders/${var.gcp_folder_id}"
   terraform_admin_project_number = data.google_project.terraform_admin.number
+
+  tfe_variable_set = {
+    "host-vpc-project" = tfe_variable_set.host_vpc_project.id
+    "service-project"  = tfe_variable_set.service_project.id
+  }
 }
