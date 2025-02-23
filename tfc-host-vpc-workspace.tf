@@ -12,7 +12,7 @@ resource "tfe_variable_set" "host_vpc_project" {
 # OIDC-compliant workload identity tokens to authenticate with GCP.
 #
 # https://registry.terraform.io/providers/hashicorp/tfe/latest/docs/resources/variable
-resource "tfe_variable" "enable_gcp_provider_auth" {
+resource "tfe_variable" "host_vpc_project_enable_gcp_provider_auth" {
   variable_set_id = local.tfc_variable_set_id["host-vpc-project"]
 
   key      = "TFC_GCP_PROVIDER_AUTH"
@@ -20,7 +20,7 @@ resource "tfe_variable" "enable_gcp_provider_auth" {
   category = "env"
 }
 
-resource "tfe_variable" "tfc_gcp_oidc_identity_provider_name" {
+resource "tfe_variable" "host_vpc_project_tfc_gcp_oidc_identity_provider_name" {
   variable_set_id = local.tfc_variable_set_id["host-vpc-project"]
 
   key      = "TFC_GCP_WORKLOAD_PROVIDER_NAME"
@@ -28,7 +28,7 @@ resource "tfe_variable" "tfc_gcp_oidc_identity_provider_name" {
   category = "env"
 }
 
-resource "tfe_variable" "tfc_gcp_plan_service_account_email" {
+resource "tfe_variable" "host_vpc_project_tfc_gcp_plan_service_account_email" {
   variable_set_id = local.tfc_variable_set_id["host-vpc-project"]
 
   key      = "TFC_GCP_PLAN_SERVICE_ACCOUNT_EMAIL"
@@ -36,7 +36,7 @@ resource "tfe_variable" "tfc_gcp_plan_service_account_email" {
   category = "env"
 }
 
-resource "tfe_variable" "tfc_gcp_apply_service_account_email" {
+resource "tfe_variable" "host_vpc_project_tfc_gcp_apply_service_account_email" {
   variable_set_id = local.tfc_variable_set_id["host-vpc-project"]
 
   key      = "TFC_GCP_APPLY_SERVICE_ACCOUNT_EMAIL"
@@ -44,7 +44,7 @@ resource "tfe_variable" "tfc_gcp_apply_service_account_email" {
   category = "env"
 }
 
-resource "tfe_variable" "tfc_gcp_audience" {
+resource "tfe_variable" "host_vpc_project_tfc_gcp_audience" {
   variable_set_id = local.tfc_variable_set_id["host-vpc-project"]
 
   key      = "TFC_GCP_WORKLOAD_IDENTITY_AUDIENCE"
