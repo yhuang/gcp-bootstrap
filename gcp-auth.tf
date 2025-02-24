@@ -103,7 +103,7 @@ resource "google_organization_iam_member" "tfc_gcp_plan" {
 #
 # https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/google_folder_iam
 resource "google_folder_iam_member" "tfc_gcp_plan" {
-  count = startswith(local.gcp_folder_id, "folders/") ? 0 : 1
+  count = startswith(local.gcp_folder_id, "folders/") ? 1 : 0
 
   folder = local.gcp_folder_id
   role   = local.gcp_iam_role["viewer"]
