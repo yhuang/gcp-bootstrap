@@ -26,6 +26,10 @@ output "terraform_admin_gcp_project_id" {
   value = var.terraform_admin_gcp_project_id
 }
 
+output "gcp_org_id" {
+  value = var.gcp_org_id
+}
+
 output "gcp_folder_id" {
   value = var.gcp_folder_id
 }
