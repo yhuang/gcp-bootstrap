@@ -2,6 +2,10 @@ resource "tfe_workspace" "service_project" {
   name         = "service-project"
   organization = var.tfc_organization_name
   project_id   = local.tfc_project_id
+
+  lifecycle {
+    ignore_changes = [ vcs_repo ]
+  }
 }
 
 # The following variables must be set to enable a Terraform workspace to use the
