@@ -103,5 +103,6 @@ EOF
     "org"    = local.gcp_org_admin_roles_list
   }
 
+  gcp_folder_id                  = var.gcp_folder_id == null ? "folders/" : "folders/${var.gcp_folder_id}"
   terraform_admin_project_number = data.google_project.terraform_admin.number
 }
