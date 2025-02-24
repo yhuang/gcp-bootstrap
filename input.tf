@@ -25,3 +25,7 @@ variable "tfc_organization_name" {
 variable "tfc_project_name" {
   type = string
 }
+
+variable "TF_VAR_TFE_TOKEN" {
+  type = string
+}
