@@ -47,3 +47,28 @@ resource "tfe_variable" "service_project_tfc_gcp_audience" {
   value    = local.tfc_gcp_audience
   category = "env"
 }
+
+
+resource "tfe_variable" "host_vpc_project_tfc_organization_name" {
+  workspace_id = local.tfc_workspace_id["host-vpc-project"]
+
+  key      = "tfc_organization_name"
+  value    = var.tfc_organization_name
+  category = "terraform"
+}
+
+resource "tfe_variable" "host_vpc_project_tfc_workspace_name" {
+  workspace_id = local.tfc_workspace_id["host-vpc-project"]
+
+  key      = "tfc_workspace_name"
+  value    = "${terraform.workspace}"
+  category = "terraform"
+}
+
+resource "tfe_variable" "tf_var_tfe_token" {
+  workspace_id = local.tfc_workspace_id["host-vpc-project"]
+
+  key      = "TF_VAR_TFE_TOKEN"
+  value    = "${terraform.workspace}"
+  category = "env"
+}
