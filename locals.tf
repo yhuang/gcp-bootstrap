@@ -85,6 +85,7 @@ EOF
     "project-mover",
     "quota-admin",
     "service-management-admin",
+    "shared-vpc-admin",
     "workload-identity-admin",
   ]
 
