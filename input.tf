@@ -25,7 +25,3 @@ variable "tfc_organization_name" {
 variable "tfc_project_name" {
   type = string
 }
-
-variable "TFE_TOKEN" {
-  type = string
-}
