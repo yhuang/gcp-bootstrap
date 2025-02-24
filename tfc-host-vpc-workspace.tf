@@ -60,10 +60,10 @@ resource "tfe_variable" "host_vpc_project_tfc_organization_name" {
   category = "terraform"
 }
 
-resource "tfe_variable" "host_vpc_project_main_tfc_workspace_name" {
+resource "tfe_variable" "host_vpc_project_tfc_bootstrap_workspace_name" {
   workspace_id = local.tfc_workspace_id["host-vpc-project"]
 
-  key      = "tfc_workspace_name"
+  key      = "tfc_bootstrap_workspace_name"
   value    = "${terraform.workspace}"
   category = "terraform"
 }
