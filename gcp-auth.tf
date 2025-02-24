@@ -64,7 +64,7 @@ resource "google_service_account_iam_member" "tfc_gcp" {
 #
 # https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/google_organization_iam
 resource "google_organization_iam_member" "tfc_gcp_apply" {
-  count = local.gcp_folder_id == "folders/" ? length(local.gcp_admin_roles_list["org"]) : 0
+  count = startswith(local.gcp_folder_id, "folders/") ? 0 : length(local.gcp_admin_roles_list["org"])
 
   org_id = var.gcp_org_id
   role   = local.gcp_iam_role[local.gcp_admin_roles_list["org"][count.index]]
@@ -75,7 +75,7 @@ resource "google_organization_iam_member" "tfc_gcp_apply" {
 #
 # https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/google_folder_iam
 resource "google_folder_iam_member" "tfc_gcp_apply" {
-  count = local.gcp_folder_id == "folders/" ? 0 : length(local.gcp_admin_roles_list["folder"])
+  count = startswith(local.gcp_folder_id, "folders/") ? length(local.gcp_admin_roles_list["folder"]) : 0
 
   folder = local.gcp_folder_id
   role   = local.gcp_iam_role[local.gcp_admin_roles_list["folder"][count.index]]
@@ -92,7 +92,7 @@ resource "google_billing_account_iam_member" "tfc_gcp_apply" {
 #
 # https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/google_organization_iam
 resource "google_organization_iam_member" "tfc_gcp_plan" {
-  count = local.gcp_folder_id == "folders/" ? 1 : 0
+  count = startswith(local.gcp_folder_id, "folders/") ? 0 : 1
 
   org_id = var.gcp_org_id
   role   = local.gcp_iam_role["viewer"]
@@ -103,7 +103,7 @@ resource "google_organization_iam_member" "tfc_gcp_plan" {
 #
 # https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/google_folder_iam
 resource "google_folder_iam_member" "tfc_gcp_plan" {
-  count = local.gcp_folder_id == "folders/" ? 0 : 1
+  count = startswith(local.gcp_folder_id, "folders/") ? 0 : 1
 
   folder = local.gcp_folder_id
   role   = local.gcp_iam_role["viewer"]
